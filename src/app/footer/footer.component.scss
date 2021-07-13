@@ -1,0 +1,43 @@
+.container-footer{
+  background-color: #222a3c;
+  color: white;
+  display: grid;
+  grid-template: 1fr 1fr 1fr / 50%;
+
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  .nav {
+    display: grid;
+    grid-template: auto / 33% 33% 33%;
+    align-items: center;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+    a:hover {
+      color: #589288;
+    }
+  }
+}
+
+
+@media (orientation: portrait) and (max-width: 1023px) {
+  .container-footer {
+    grid-template: 1fr 1fr 1fr/90%;
+    .nav {
+      grid-template: repeat(4, 1fr) / 1fr;
+    }
+  }
+
+}
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  .container-footer {
+    grid-template: 1fr 1fr 1fr/90%;
+  }
+
+}

@@ -1,0 +1,78 @@
+<div class="head" [ngClass]="{fixed:classHead}" (window:scroll)="windowScroll($event)">
+  <div class="Space"></div>
+  <div class="logo">
+    <img src="assets/images/logo.svg" alt="">
+  </div>
+  <div class="Space"></div>
+
+  <nav class="nav">
+    <div class="wrap-menu" *ngFor="let nav of navs">
+      <a routerLink="{{nav.route}}"
+         (mouseenter)="nav.visible = true">{{nav.text}}</a>
+      <span class="sub-menu-position" (mouseleave)="nav.visible = false" [hidden]="!nav.visible">
+            <ul *ngIf="nav.sub && nav.sub.length">
+              <li *ngFor="let sub of nav.sub">
+                <button mat-raised-button>
+                  <img src="assets/images/logo.svg" alt="">
+                  <a>{{sub.text}}</a>
+                </button>
+              </li>
+            </ul>
+      </span>
+    </div>
+    <button mat-raised-button>Primary</button>
+  </nav>
+
+  <button mat-mini-fab aria-label="Example icon button with a menu icon" class="mob-menu">
+    <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+  </button>
+
+
+  <mat-drawer #drawer [mode]="over">
+    <div class="head-sidenav">
+      <div class="Space"></div>
+      <div class="logo">
+        <img src="assets/images/logo.svg" alt="">
+      </div>
+      <div class="Space"></div>
+      <button mat-mini-fab aria-label="Example icon button with a menu icon" class="close-but">
+        <mat-icon class="mob-menu-nav" (click)="drawer.toggle()">menu</mat-icon>
+      </button>
+      <div class="Space"></div>
+    </div>
+
+    <nav class="sidenav">
+     <!-- <a href="">Company</a>
+      <a>
+        <a href="/products">products</a>
+        <button class="click-item" (click)="toggle()"><span [ngClass]="{spanRo:spanRotate}">&#8743;</span></button>
+      </a>
+      <div class="sidenav-menu" [ngClass]="{active:classNavMenu}">
+        <a mat-menu-item>Item 1</a>
+        <a mat-menu-item>Item 2</a>
+        <a mat-menu-item>Item 3</a>
+      </div>
+      <a href="/contact">Contact Us</a>
+      <button mat-raised-button>Primary</button>
+-->
+
+      <div class="wrap-menu" *ngFor="let nav of navs">
+        <a routerLink="{{nav.route}}"><p (click)="drawer.toggle()">{{nav.text}}</p><div class="wrap-nav-item-sub-menu"
+        *ngIf="nav.sub && nav.sub.length">
+          <button class="click-item" (click)="toggle()"><span [ngClass]="{spanRo:spanRotate}">&#8743;</span></button>
+          <ul  [ngClass]="{active:classNavMenu}" class="sidenav-menu">
+            <li *ngFor="let sub of nav.sub" >
+              <button mat-raised-button>
+                <img src="assets/images/logo.svg" alt="">
+                <a>{{sub.text}}</a>
+              </button>
+            </li>
+          </ul>
+        </div></a>
+      </div>
+      <button mat-raised-button>Primary</button>
+    </nav>
+  </mat-drawer>
+  <div class="Space">
+  </div>
+</div>

@@ -1,0 +1,248 @@
+.video-text-block {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  z-index: 1;
+  color: white;
+  display: grid;
+
+  h1 {
+    font-size: 66.5px;
+    font-weight: 700;
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 34px;
+    font-weight: 400;
+    margin: 20px 0;
+  }
+
+  button {
+    background-color: #589288;
+    color: white;
+    text-transform: uppercase;
+    min-width: 100px;
+    width: 30%;
+  }
+}
+
+.enterprise {
+  .container {
+    display: grid;
+    grid-template: auto 70px auto / 60%;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 30px;
+
+    h1 {
+      font-size: 55px;
+      font-weight: 700;
+    }
+
+    button {
+      background-color: #222a3c;
+      color: white;
+      font-size: 35px;
+    }
+
+    .enterprise_content {
+      margin-top: 15px;
+      display: grid;
+      grid-template: 1fr / 32% 32% 32%;
+      grid-template-columns: repeat( auto-fit, minmax(361px, 1fr) );
+      grid-gap: 22px;
+
+      .enterprise_item {
+        color: white;
+        padding: 20px;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+
+        .svg_icon {
+          max-height: 50px;
+
+          svg {
+            height: 50px;
+          }
+        }
+
+        h1 {
+          margin: 30px 0;
+        }
+
+        &:first-child {
+          background-color: #589288;
+        }
+
+        &:nth-child(2) {
+          background-color: #4d75ad;
+        }
+
+        &:nth-child(3) {
+          background-color: #6476bc;
+        }
+      }
+
+    }
+  }
+}
+
+
+.support {
+  background-color: #e8e9ea;
+
+  .container {
+    display: grid;
+    grid-template: auto auto / 60%;
+    justify-content: center;
+    text-align: center;
+
+    h1 {
+      font-size: 55px;
+      font-weight: 700;
+    }
+
+    .support_content {
+      margin: 15px 0 145px;
+      display: grid;
+      grid-template: 1fr / 32% 32% 32%;
+      grid-template-columns: repeat( auto-fit, minmax(361px, 1fr) );
+      grid-gap: 22px;
+
+      .support_item {
+        display: grid;
+        grid-template: 50% 50% / 1fr;
+        background-color: white;
+        border-radius: 16px;
+        color: #3f4c70;
+        font-weight: 500;
+        overflow: hidden;
+
+        .support_item_text {
+          display: grid;
+          text-align: start;
+          padding: 15px;
+
+          h1 {
+            font-size: 35px;
+            font-weight: 400;
+            margin: 0;
+            padding-top: 20px;
+          }
+
+          a {
+            font-size: 22px;
+            color: #589288;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+          }
+        }
+
+        .support_item_img {
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            max-width: 100%;
+            min-height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &:nth-child(3) {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+@media (orientation: portrait) and (max-width: 1023px) {
+  .video-text-block {
+    h1 {
+      font-size: 35px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+
+
+  .enterprise {
+    .container {
+      grid-template: auto 70px auto/90%;
+
+      h1 {
+        font-size: 35px;
+      }
+      .enterprise_content {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+    }
+  }
+
+
+  .support {
+    .container {
+      grid-template: auto auto / 90%;
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .support_content {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+    }
+  }
+
+}
+
+
+
+@media (orientation: landscape) and (max-width: 1023px) {
+  .video-text-block {
+    h1 {
+      font-size: 35px;
+    }
+
+    p {
+      font-size: 24px;
+    }
+  }
+
+
+  .enterprise {
+    .container {
+      grid-template: auto 70px auto/90%;
+
+      h1 {
+        font-size: 35px;
+      }
+      .enterprise_content {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+    }
+  }
+
+
+  .support {
+    .container {
+      grid-template: auto auto / 90%;
+
+      h1 {
+        font-size: 35px;
+      }
+
+      .support_content {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      }
+    }
+  }
+}

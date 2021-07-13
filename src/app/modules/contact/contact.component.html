@@ -1,0 +1,95 @@
+<div class="container">
+<div class="block-video">
+  <app-video-player url="/assets/videos/main-video/video.m3u8" poster="/assets/videos/main-video/bg.png"></app-video-player>
+  <div class="video-text-block">
+    <h1>It’s time to re-think and build <br> for your future with </h1>
+    <p>Bla-bla-bla text obout product</p>
+    <button mat-raised-button>Primary</button>
+  </div>
+</div>
+
+
+<section class="container_contact">
+  <div class="Space"></div>
+
+  <div class="text_top_block">
+    <h1>Запитайте нас про що завгодно.</h1>
+    <p>Ми можемо говорити o АI весь день. Є питання?</p>
+    <p>Ми готові вислухати тебе.</p>
+  </div>
+
+  <div class="Space"></div>
+
+  <form class="example-form">
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>First name</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+        Please enter a valid email address
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+    </mat-form-field>
+
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Ex. San Francisco">
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Telephone</mat-label>
+      <span matPrefix>+3</span>
+      <input type="tel" matInput placeholder="555-555-1234">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Message</mat-label>
+      <input matInput #message maxlength="256" placeholder="Ex. I need help with...">
+    </mat-form-field>
+
+    <button mat-raised-button>Primary</button>
+  </form>
+
+  <div class="Space"></div>
+
+</section>
+
+
+<section class="map_block">
+  <div class="text_map">
+    <h1>Renovation</h1>
+    <p>Де ми знаходимося </p>
+    <h1>87A Mezhigorskaya str.
+      Kyiv, 04080, Ukraine</h1>
+    <p>Телефон</p>
+    <h1><a href="tel:+3 (063) 33 22 11">+38(068) 350 21 23</a></h1>
+  </div>
+  <div class="container-map">
+    <div class="map">
+      <img src="assets/images/map/map.jpg" alt="">
+    </div>
+  </div>
+  <div class="Space"></div>
+</section>
+
+</div>
